@@ -25,7 +25,7 @@ const BannerContainer = styled(Box)(({ theme }) => ({
   width: "100%",
   position: "relative",
   [theme.breakpoints.down("sm")]: {
-    height: "80vh",
+    height: "70vh",
     paddingLeft: theme.spacing(0.2),
     paddingRight: theme.spacing(0.2),
     backgroundImage: `url(${BannerMobile})`,
@@ -94,7 +94,8 @@ function App() {
                         fontSize="15vw"
                         color="primary"
                         fontWeight={500}
-                        align="center">
+                        align="center"
+                        sx={{textShadow: "4px 2px 8px #fec72f6b"}}>
                         iCarly
                       </Typography>
                       <Typography color="#fff" fontSize="4vw" align="center">

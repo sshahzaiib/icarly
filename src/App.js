@@ -4,13 +4,26 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import "./App.css";
 import CssBaseline from "@mui/material/CssBaseline";
-import { Box, Container, Grid } from "@mui/material";
-import Banner from "./assets/images/banner.webp";
-import BannerMobile from "./assets/images/banner-mobile.png";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import Banner from "./assets/images/banner.png";
+import { styled } from "@mui/system";
+
+const BannerContainer = styled(Box)(({theme}) => ({
+  [theme.breakpoints.down("sm")]: {
+    paddingLeft: theme.spacing(1),
+    paddingRight: theme.spacing(1)
+  }
+}))
+
+const Description = styled(Box)(({ theme }) => ({
+  marginBottom: "2vh",
+  width: "55%",
+  [theme.breakpoints.down("sm")]: {
+    marginBottom: "1vw",
+  },
+}));
 
 function App() {
-  const sm = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   return (
     <>
       <CssBaseline />
@@ -18,18 +31,48 @@ function App() {
         <Grid container spacing={3}>
           <Grid item xs={12}>
             <Grid container spacing={3}>
-              <Grid item md={9} xs={12}>
-                <Box
+              <Grid item xs={12}>
+                <BannerContainer
+                  id="banner__home"
+                  mt={2}
+                  px={3}
                   sx={{
-                    backgroundImage: `url(${sm ? BannerMobile : Banner})`,
-                    backgroundPosition: "center 10%",
+                    backgroundImage: `url(${Banner})`,
+                    backgroundPosition: "top",
                     backgroundRepeat: "no-repeat",
-                    backgroundSize: "cover",
+                    backgroundSize: "contain",
                     borderRadius: 10,
                   }}
-                  height={350}
-                  width="100%"
-                />
+                  height="100vh"
+                  width="100%">
+                  <Box pt="15vw">
+                    <Typography
+                      variant="h1"
+                      fontSize="9vw"
+                      color="primary"
+                      fontWeight={700}>
+                      iCarly
+                    </Typography>
+                    <Description>
+                      <Typography color="#fff" fontSize="1.3vw">
+                        Carly Shay finds her previously "normal" life turned
+                        upside down when her Internet show, "iCarly," becomes an
+                        instant smash with young Web heads. With her parents
+                        traveling abroad, Carly must rely on the help of friends
+                        Sam and Freddie, and her quirky older brother, Spencer,
+                        to cope with the newfound success.
+                      </Typography>
+                    </Description>
+                    <Button
+                      component={Box}
+                      height="3vw"
+                      width="10vw"
+                      sx={{ fontSize: "1.3vw" }}
+                      variant="contained">
+                      Play
+                    </Button>
+                  </Box>
+                </BannerContainer>
               </Grid>
               <Grid item sm={3}></Grid>
             </Grid>

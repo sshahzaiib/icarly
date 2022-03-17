@@ -1,3 +1,7 @@
 body {
   background-color: #14131afc !important;
 }
+
+body > iframe {
+  pointer-events: none;
+}

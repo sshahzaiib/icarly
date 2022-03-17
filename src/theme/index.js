@@ -48,4 +48,7 @@ export const themeOptions = {
       arrow: true,
     },
   },
+  typography: {
+    fontSize: 18,
+  },
 };

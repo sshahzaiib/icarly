@@ -25,7 +25,7 @@ const BannerContainer = styled(Box)(({ theme }) => ({
   width: "100%",
   position: "relative",
   [theme.breakpoints.down("sm")]: {
-    height: "72vh",
+    height: "75vh",
     paddingLeft: theme.spacing(0.2),
     paddingRight: theme.spacing(0.2),
     backgroundImage: `url(${BannerMobile})`,
